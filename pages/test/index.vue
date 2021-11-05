@@ -7,13 +7,15 @@
             <a href="#hero"><h1><span>K</span>ia <span>Y</span>un</h1></a>
           </div>
           <div class="nav-list">
-            <div class="hamburger"><div class="bar"></div></div>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Services</a></li>
-              <li><a href="#">Projects</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
+            <div @click="hamburger" :class="{active: isActive}" class="hamburger">
+              <div class="bar"></div>
+            </div>
+            <ul :class="{active: isActive}">
+              <li><a @click="hamburger" href="#hero" data-after="Home">Home</a></li>
+              <li><a @click="hamburger" href="#services" data-after="Services">Services</a></li>
+              <li><a @click="hamburger" href="#projects" data-after="Projects">Projects</a></li>
+              <li><a @click="hamburger" href="#about" data-after="About">About</a></li>
+              <li><a @click="hamburger" href="#contact" data-after="Contact">Contact</a></li>
             </ul>
           </div>
         </div>
@@ -26,7 +28,7 @@
           <h1>Hello,<span></span></h1>
           <h1>My Name Is <span></span></h1>
           <h1>KiaYun <span></span></h1>
-          <a href="#" type="button" class="cta">Portfolio</a>
+          <a href="#projects" type="button" class="cta">Portfolio</a>
         </div>
       </div>
     </section>
@@ -41,28 +43,32 @@
         </div>
         <div class="service-bottom">
           <div class="service-item">
-           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="setting-icon"></div>
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="setting-icon">
+            </div>
             <h2>Web Design</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto
               consectetur cumque deserunt, esse excepturi laborum magni maxime nulla possimus
               quibusdam reiciendis repudiandae rerum soluta, temporibus. Id perspiciatis placeat vero.</p>
           </div>
           <div class="service-item">
-           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="setting-icon"></div>
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="setting-icon">
+            </div>
             <h2>Web Design</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto
               consectetur cumque deserunt, esse excepturi laborum magni maxime nulla possimus
               quibusdam reiciendis repudiandae rerum soluta, temporibus. Id perspiciatis placeat vero.</p>
           </div>
           <div class="service-item">
-           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="setting-icon"></div>
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="setting-icon">
+            </div>
             <h2>Web Design</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto
               consectetur cumque deserunt, esse excepturi laborum magni maxime nulla possimus
               quibusdam reiciendis repudiandae rerum soluta, temporibus. Id perspiciatis placeat vero.</p>
           </div>
           <div class="service-item">
-           <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="setting-icon"></div>
+            <div class="icon"><img src="https://img.icons8.com/bubbles/100/000000/services.png" alt="setting-icon">
+            </div>
             <h2>Web Design</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto
               consectetur cumque deserunt, esse excepturi laborum magni maxime nulla possimus
@@ -147,7 +153,7 @@
       <div class="about container">
         <div class="col-left">
           <div class="about-img">
-<!--            <img src="@/static/images/img-2.png" alt="img">-->
+            <!--            <img src="@/static/images/img-2.png" alt="img">-->
           </div>
         </div>
         <div class="col-right">
@@ -176,7 +182,7 @@
               <h2>+6017 xxxx xxx</h2>
             </div>
           </div>
-            <div class="contact-item">
+          <div class="contact-item">
             <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/new-post.png"/></div>
             <div class="contact-info">
               <h1>Email</h1>
@@ -184,11 +190,11 @@
               <h2>info@gmail.com</h2>
             </div>
           </div>
-            <div class="contact-item">
+          <div class="contact-item">
             <div class="icon"><img src="https://img.icons8.com/bubbles/50/000000/map-marker.png"/></div>
             <div class="contact-info">
               <h1>Address</h1>
-              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit.  </h2>
+              <h2>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </h2>
             </div>
           </div>
         </div>
@@ -205,19 +211,18 @@
           <div class="social-item">
             <a href="#"><img src="https://img.icons8.com/bubbles/50/000000/facebook-new.png"/></a>
           </div>
-            <div class="social-item">
+          <div class="social-item">
             <a href="#"><img src="https://img.icons8.com/bubbles/50/000000/instagram-new.png"/></a>
           </div>
-            <div class="social-item">
+          <div class="social-item">
             <a href="#"><img src="https://img.icons8.com/bubbles/50/000000/twitter.png"/></a>
           </div>
-            <div class="social-item">
+          <div class="social-item">
             <a href="#"><img src="https://img.icons8.com/bubbles/50/000000/behance.png"/></a>
           </div>
         </div>
         <p>Copyright @ 2021 KiaYun. All rights reserved.</p>
       </div>
-
 
 
     </section>
@@ -229,7 +234,23 @@
 <script>
 
 import "@/assets/hero.css"
+
 export default {
+
+  data() {
+    return {
+      isActive: false
+    }
+
+  },
+
+  methods: {
+    hamburger() {
+      this.isActive =! this.isActive
+    }
+
+
+  }
 
 }
 </script>
