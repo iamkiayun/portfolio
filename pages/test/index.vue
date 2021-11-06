@@ -153,7 +153,7 @@
       <div class="about container">
         <div class="col-left">
           <div class="about-img">
-            <!--            <img src="@/static/images/img-2.png" alt="img">-->
+            <img src="@/static/images/img-2.png" alt="img">
           </div>
         </div>
         <div class="col-right">
@@ -246,7 +246,7 @@ export default {
 
   methods: {
     hamburger() {
-      this.isActive =! this.isActive
+      this.isActive = !this.isActive
     }
 
 
