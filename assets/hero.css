@@ -108,7 +108,7 @@ p {
   height: 100%;
   /*max-width: 1300px;*/
   padding: 0 10px;
-  padding-left: 120px;
+  padding-left: 30px;
 
 }
 
@@ -745,6 +745,11 @@ p {
     color: crimson;
     font-size: 6rem;
   }
+
+  #header .nav-bar {
+    padding-left: 30px;
+
+}
 
   /*hero*/
   #hero h1 {
