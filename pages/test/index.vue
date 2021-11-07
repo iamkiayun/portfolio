@@ -14,7 +14,7 @@
               <li><a @click="hamburger" href="#hero" data-after="Home">Home</a></li>
               <li><a @click="hamburger" href="#services" data-after="Services">Services</a></li>
               <li><a @click="hamburger" href="#projects" data-after="Projects">Projects</a></li>
-              <li><a @click="hamburger" href="#about" data-after="About   ">About</a></li>
+              <li><a @click="hamburger" href="#about" data-after="About">About</a></li>
               <li><a @click="hamburger" href="#contact" data-after="Contact">Contact</a></li>
             </ul>
           </div>
